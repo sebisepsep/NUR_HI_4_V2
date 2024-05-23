@@ -7,6 +7,8 @@ Here we want calculate the potential from the poisson equation using the FFT.
 \end{align}
 
 
+In this section, we attempted to solve the Poisson equation using the FFT. The Fourier transformation was performed according to Equations 5, 6, and 7. The constant pre-factors are not relevant to the Fourier transformation itself, but they are important for the scaling of the values. Apparently, the 3D algorithm is not working. Since I tested the FFT with test arrays against the NumPy function, the problem should not lie there. I transformed from 1 to 3 dimensions by reordering my matrix arrays each time so that the application could always occur on a 1D array, and then I could simply overwrite the previous array. With a smaller matrix, applying the functions at least worked, so it seems that the combination of switching rows, columns, and depths, along with the respective 1D FFT, is not working properly, even though, as far as I have seen individually, both worked.
+
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{fig2b_pot.png}
