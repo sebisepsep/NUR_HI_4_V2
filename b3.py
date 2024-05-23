@@ -13,7 +13,7 @@ def x_vec(x):
 theta_vec = np.ones(2)
 m = len(kappa)
 
-
+#sigmoid
 def h_theta(theta,x):
     return 1/(1+np.exp(-np.dot(theta,x_vec(x))))
 
