@@ -146,5 +146,18 @@ ax[1,1].set_aspect('equal', 'box')
 plt.savefig("fig2b_fourier.png")
 plt.close()
 
+# Test 
+x = np.random.random(16)  # example
+my_fft_result = fft_array(x)
+numpy_fft_result = np.fft.fft(x)
+
+with open("fft_comparison.txt", "w") as file:
+    file.write("My FFT result:\n")
+    file.write(str(my_fft_result) + "\n\n")
+    file.write("NumPy FFT result:\n")
+    file.write(str(numpy_fft_result) + "\n\n")
+    file.write("Difference:\n")
+    file.write(str(np.max(np.abs(my_fft_result - numpy_fft_result))) + "\n")
+
 
 
